@@ -1,18 +1,33 @@
-import React from 'react';
-import {Card, ListGroup} from 'react-bootstrap'
-import fantasy from '../fantasy.json'
+import React, { Component } from "react";
+import { Card, Row, Col, Container} from "react-bootstrap";
+import fantasy from "../fantasy.json";
 
-export default function BookList(props){
-    return( 
+class BookList extends Component {
+  render() {
+    return (
+      <Container>
+        <Row xs={1} md={2} lg={4} className="g-4">
+          {
+            fantasy.map(book=> {
+              return  <Col className="mx-auto">
+              <Card>
+                <Card.Img
+                  className="book-cover"
+                  variant="top"
+                  src={book.img}
+                />
+                <Card.Body>
+                  <Card.Title>{book.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
 
-    fantasy.map(book=>{
-      return (
-    <ListGroup>
-      <ListGroup.Item>{book.title}</ListGroup.Item>
-    </ListGroup>
-
-      )
-    })
-    )
-
+            })
+          }
+        </Row>
+      </Container>
+    );
+  }
 }
+
+export default BookList;
