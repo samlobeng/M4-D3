@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import {Component, P} from 'react';
 import {Alert} from 'react-bootstrap'
 
 
@@ -8,10 +8,11 @@ class MySign extends Component {
         return (
             <>
             {[
-                'primary'
+                'dark'
               ].map((variant, idx) => (
-                <Alert  style={{height:"300px",color:"#fff",fontSize:"5rem"}} key={idx} variant={variant}>
-                 {this.props.warning} 
+                <Alert className="text-danger" style={{height:"300px",fontWeight:"Bolder"}} key={idx} variant={variant}>
+                 <h2>{this.props.warning }</h2>
+                <p>{this.props.msg}</p>
                 </Alert>
               ))
               }</>
