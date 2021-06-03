@@ -1,17 +1,33 @@
-import React from 'react';
-import {Card, Button} from 'react-bootstrap'
+import React, { Component } from "react";
+import { Card, Row, Col, Container} from "react-bootstrap";
+import fantasy from "../fantasy.json";
 
-export default function BookList(props){
-    return( <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src="holder.js/100px180" />
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk of
-        the card's content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-  </Card>
-)
+class BookList extends Component {
+  render() {
+    return (
+      <Container>
+        <Row xs={1} md={2} lg={4} className="g-4">
+          {
+            fantasy.map(book=> {
+              return  <Col className="mx-auto">
+              <Card>
+                <Card.Img
+                  className="book-cover"
+                  variant="top"
+                  src={book.img}
+                />
+                <Card.Body>
+                  <Card.Title>{book.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            })
+          }
+        </Row>
+      </Container>
+    );
+  }
 }
+
+export default BookList;
