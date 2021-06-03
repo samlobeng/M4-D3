@@ -24,15 +24,16 @@ class MyNav extends Component {
                     </NavDropdown>
                    
                     </Nav>
-                    <Form className="d-flex ms-auto">
+                    {/* <Form className="d-flex ms-auto">
                     <FormControl
                         type="search"
                         placeholder="Search"
-                        className="ml-2"
+                        className="mr-2"
                         aria-label="Search"
+                        onChange={e=> this.setState({query: e.target.value})}
                     />
                     <Button variant="outline-light">Search</Button>
-                    </Form>
+                    </Form> */}
                 </Navbar.Collapse>
                 </Navbar>
           );

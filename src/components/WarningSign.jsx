@@ -10,7 +10,7 @@ class MySign extends Component {
             {[
                 'dark'
               ].map((variant, idx) => (
-                <Alert className="text-danger" style={{height:"300px",fontWeight:"Bolder"}} key={idx} variant={variant}>
+                <Alert className="text-danger" style={{fontWeight:"Bolder"}} key={idx} variant={variant}>
                  <h2>{this.props.warning }</h2>
                 <p>{this.props.msg}</p>
                 </Alert>
