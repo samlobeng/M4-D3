@@ -28,8 +28,9 @@ class MyNav extends Component {
                     <FormControl
                         type="search"
                         placeholder="Search"
-                        className="ml-2"
+                        className="mr-2"
                         aria-label="Search"
+                        onChange={e=> this.setState({query: e.target.value})}
                     />
                     <Button variant="outline-light">Search</Button>
                     </Form>
