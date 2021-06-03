@@ -24,7 +24,7 @@ class MyNav extends Component {
                     </NavDropdown>
                    
                     </Nav>
-                    <Form className="d-flex ms-auto">
+                    {/* <Form className="d-flex ms-auto">
                     <FormControl
                         type="search"
                         placeholder="Search"
@@ -33,7 +33,7 @@ class MyNav extends Component {
                         onChange={e=> this.setState({query: e.target.value})}
                     />
                     <Button variant="outline-light">Search</Button>
-                    </Form>
+                    </Form> */}
                 </Navbar.Collapse>
                 </Navbar>
           );

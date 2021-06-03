@@ -1,28 +1,30 @@
 import React, { Component } from "react";
-import { Card, Row, Col, Container} from "react-bootstrap";
-import fantasy from "../fantasy.json";
+import { Card, Row, Col, Container,Form,FormControl} from "react-bootstrap";
+import SingleBook from './SingleBook'
 
 class BookList extends Component {
+  state = { 
+    query: ""
+ }
   render() {
     return (
       <Container>
+          <Form className="d-flex ms-auto">
+            <FormControl
+                type="search"
+                placeholder="Search"
+                className="mr-2"
+                aria-label="Search"
+                onChange={e=> this.setState({query: e.target.value})}
+            />
+            </Form>
         <Row xs={1} md={2} lg={4} className="g-4">
           {
-            fantasy.map(book=> {
-              return  <Col className="mx-auto">
-              <Card>
-                <Card.Img
-                  className="book-cover"
-                  variant="top"
-                  src={book.img}
-                />
-                <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            })
+         this.props.books.filter(b => b.title.toLowerCase().includes(this.state.query)).map(b => (
+          <Col xs={3}>
+              <SingleBook book={b} />
+          </Col>
+      ))
           }
         </Row>
       </Container>

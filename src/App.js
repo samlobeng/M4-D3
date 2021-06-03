@@ -13,8 +13,8 @@ function App() {
     <MyNav />
     <MySign   warning={"WARNING MFS! "} msg={"We Dangerous - Carl & Samuel, 2021"}/>
     <MyBadge title = "No. Books" color = "Secondary"/>
-    {/* <Book data ={fantasy[1]}/> */}
-    <BookList/>
+    <Book className="mx-auto"book={fantasy[1]}/>
+    <BookList  books={fantasy}/>
  </> )
 
   }
